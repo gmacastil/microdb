@@ -1,0 +1,13 @@
+spring:
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    hibernate:
+       ddl-auto: update
+  datasource:
+     url: jdbc:mysql://${MYSQL_HOST:localhost}:3306/dbtest
+     username: ${USERNAME:root}
+     password: root123
+     driver-class-name: com.mysql.cj.jdbc.Driver
+
+server:
+  port: ${PUERTO:8091}
