@@ -1,17 +1,37 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
+  name: microdb
+  description: Aplicación Java para gestión de base de datos; utiliza Spring Boot
   annotations:
     backstage.io/techdocs-ref: dir:.
     github.com/project-slug: gmacastil/microdb
     sonarqube.org/project-key: microdb
-  description: Aplicación Java para gestión de base de datos; utiliza Spring Boot
-  name: microdb
   tags:
-  - java
-  - springboot
+    - java
+    - springboot
 spec:
-  lifecycle: production
-  owner: gmacastil
-  system: dummy
   type: service
+  owner: gmacastil
+  lifecycle: production
+  system: discovery
+  providesApis:
+    - microdb-api
+---
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: microdb-api
+  description: Aplicación Java para gestión de base de datos; utiliza Spring Boot
+  annotations:
+    backstage.io/techdocs-ref: dir:.
+  tags:
+    - java
+    - springboot
+spec:
+  type: openapi
+  owner: gmacastil
+  lifecycle: production
+  system: discovery
+  definition: 
+    $text: /docs/openapi.yaml
