@@ -16,22 +16,3 @@ spec:
   lifecycle: production
   system: discovery
   providesApis:
-    - microdb-api
----
-apiVersion: backstage.io/v1alpha1
-kind: API
-metadata:
-  name: microdb-api
-  description: Aplicación Java para gestión de base de datos; utiliza Spring Boot
-  annotations:
-    backstage.io/techdocs-ref: dir:.
-  tags:
-    - java
-    - springboot
-spec:
-  type: openapi
-  owner: gmacastil
-  lifecycle: production
-  system: discovery
-  definition: 
-    $text: /docs/openapi.yaml
